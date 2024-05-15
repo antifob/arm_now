@@ -2,13 +2,13 @@ from setuptools import setup, Extension
 import sys
 
 if sys.version.startswith("2"):
-    print >>sys.stderr, "arm_now is only for python3 => pip3 install arm_now"
+    print >>sys.stderr, "arm_now is only for python3"
     sys.exit(1)
 
 setup(name='arm_now',
-        version='1.26',
+        version='1.27',
         author='@chaignc',
-        url='https://github.com/nongiach/arm_now',
+        url='https://github.com/antifob/arm_now',
         packages=['arm_now'],
         py_modules=['arm_now'],
         entry_points = {
