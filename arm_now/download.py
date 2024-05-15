@@ -48,9 +48,8 @@ def scrawl_kernel(arch):
 
         # TODO: make sure they have been compiled at the same time
         if filetype not in links_dict[version][libc]:
-            if filetype is None:
-                return None, None, None
-            links_dict[version][libc][filetype] = url + link
+            if filetype is not None:
+                links_dict[version][libc][filetype] = url + link
 
     state = "bleeding-edge"
     if "stable" in links_dict:
@@ -103,8 +102,6 @@ def get_link_filetype(link):
         return "dtb"
     elif "Image" in link or "vmlinux" in link or "linux.bin" in link:
         return "kernel"
-    print("ERROR: I don't know this kind of file {}".format(link), file=sys.stderr)
-    # os.kill(0, 9)
     return None
 
 
